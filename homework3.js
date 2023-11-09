@@ -225,14 +225,14 @@ const draw4   = function(n){
         for(let j = n; j > 0 ; j--){
            
             if(j <= i+1 ){
-                text += '*' 
+             
                 data[i][count] ='*' 
                 
             }else{
-                text += '-'
+          
                 data[i][count] ='-'
             }
-               
+                
            
             ++count;
          
@@ -245,11 +245,10 @@ const draw4   = function(n){
         for(let j = 1; j <n ; j++){
         
             if(j <= i ){
-              
-                text += '*' 
+        
                 data[i][column] ='*' 
             }else{
-                text += ''
+           
                 data[i][column] ='-' 
            
             }  
@@ -262,7 +261,7 @@ const draw4   = function(n){
         }
       
         row = i+1;
-        text += '\n'
+        
     }  
 
    
@@ -273,11 +272,10 @@ const draw4   = function(n){
         for(let j = n; j > 0 ; j--){
          
             if(j < i+1 ){
-                text += '*'
+               
                 data[row][count] ='*' 
             }else{
                 
-                text += '-'
                 data[row][count] ='-' 
             }
                 
@@ -287,11 +285,11 @@ const draw4   = function(n){
         for(let j = 0; j <n-1  ; j++){
          
             if(j < i-1 ){
-                text += '*'
+               
                 data[row][column] ='*' 
             }else{
                 
-                text += '-'
+               
                 data[row][column] ='-' 
             }
                 
@@ -300,16 +298,17 @@ const draw4   = function(n){
             
         }
 
-        text += '\n'
+     
        ++row;
     }  
 
       
     for (let i = 0; i <  data.length ; i++) {
-        text += '\n'
+      console.log(data[i])
         for (let j = 0; j < data[i].length; j++) {
             text +=   data[i][j] 
         }
+        text += '\n'
     }
 
     console.log(text)
