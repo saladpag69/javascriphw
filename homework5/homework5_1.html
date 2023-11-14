@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork5.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+ 
+   
+</head>
+<body>
+
+  
+
+  <div class="flex items-center flex-col mt-20 p-1">
+    <p id="myhello" class="mb-20">Hello ReqRes users!</p>
+
+
+
+    <table  class="">
+      <tr id="rowDisplay">
+      
+      </tr>
+    </table>
+
+  
+    
+  </div>
+  
+
+
+
+
+
+  <script>
+
+    function getUser() {
+       
+      axios.get("https://reqres.in/api/users/").then(function (response) {
+    
+    let rowDisplay = document.getElementById('rowDisplay');
+    
+    resultData = rowDisplay;
+    
+    let textHtml = '';
+    for (let i = 0; i < response.data.data.length; i++) {
+      
+        let img = "<p><img class='m-10' src='" + response.data.data[i].avatar + "'></p>";
+    
+      textHtml += "<td class=''>" +"<P>"+ response.data.data[i].first_name +"<br></P>"+ response.data.data[i].email +"<br>" + img + "</td>";
+    }
+    
+    rowDisplay.innerHTML = textHtml;
+    
+    });
+       }
+    
+    function getUser2() {
+      axios.get("https://reqres.in/api/users/").then(function (response) {
+          console.log(response.data.data[0])
+          resultData = response.data.data[0]
+         })
+        }
+    
+    getUser()
+    //getUser2()
+    </script>
+    
+
+</body>
+</html>
